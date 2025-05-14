@@ -9,7 +9,7 @@ import { PieChartOption } from '../interfaces/pieChart';
   providedIn: 'root'
 })
 export class ChartsAPIService {
-  private baseUrl = 'http://echartswebapi.runasp.net/api/Charts';
+  private baseUrl = 'https://echartswebapi.runasp.net/api/Charts';
 
   constructor(private http: HttpClient) { }
 
