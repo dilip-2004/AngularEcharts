@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="chart-controls">
+  <label for="chartSelector">Chart Type:</label>
+  <select id="chartSelector" [(ngModel)]="chartType" (change)="change()">
+    <option value="" disabled selected>Select chart type</option>
+    <option value="bar">Bar Chart</option>
+    <option value="line">Line Chart</option>
+    <option value="pie">Pie Chart</option>
+    <option value="radar">Radar Chart</option>
+  </select>
+</div>
+
+@switch (chartType) {
+  @case ('bar') {
+    <div class="chart-container">
+      <h3>Bar Chart Visualization</h3>
+      <app-chart></app-chart>
+    </div>
+  }
+  
+  @case ('line') {
+    <div class="chart-container">
+      <h3>Line Chart Visualization</h3>
+      <app-line></app-line>
+    </div>
+  }
+  
+  @case ('pie') {
+    <div class="chart-container">
+      <h3>Pie Chart Visualization</h3>
+      <app-pie></app-pie>
+    </div>
+  }
+  
+  @case ('radar') {
+    <div class="chart-container">
+      <h3>radar Chart Visualization</h3>
+      <app-radar></app-radar>
+    </div>
+  }
+  
+  @default {
+    <div class="no-selection">
+      <p>Please select a chart type from the dropdown above</p>
+    </div>
+  }
+}
